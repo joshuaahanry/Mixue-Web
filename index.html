@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+
+<body>
+
+    <!-- bootsrap navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger py-2 fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="index.html">
+                <img src="images/logo.png" alt="site icon" style="width: 100px; height: auto;">
+            </a>
+    
+            <!-- Icon Buttons -->
+            <div class="order-lg-2 nav-btns d-flex align-items-center">
+                <button type="button" class="btn text-white position-relative me-2">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
+                </button>
+                <button type="button" class="btn text-white position-relative">
+                    <i class="fa fa-user"></i>
+                </button>
+            </div>
+    
+            <!-- Toggler -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Menu -->
+            <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-uppercase text-white" href="#header">home</a>
+                    </li>
+            
+                    <!-- Dropdown Kategori -->
+                    <li class="nav-item dropdown px-2">
+                        <a class="nav-link dropdown-toggle text-uppercase text-white" href="#" id="kategoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Kategori
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="kategoriDropdown">
+                            <li><a class="dropdown-item" href="#ice-cream">Fresh Ice Cream</a></li>
+                            <li><a class="dropdown-item" href="#tea">Real Fruit Tea</a></li>
+                            <li><a class="dropdown-item" href="#smoothies">Milk Tea</a></li>
+                            <li><a class="dropdown-item" href="#coffee">Fresh Tea</a></li>
+                            <li><a class="dropdown-item" href="#coffee">Coffee</a></li>
+                        </ul>
+                    </li>
+            
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-uppercase text-white" href="#blogs">blogs</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    
+    <!-- end of navbar -->
+
+  
+<!--ini tombol search-->
+      <div class="container mt-5 pt-5">
+        <div class="search-bar">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Cari Produk..." aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Cari</button>
+            </form>
+        </div>
+    </div>
+    
+    <!--ini produk unggulan-->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Produk Unggulan</h2>
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="images/unggulan1.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Boba Sundae</h5>
+                        <p class="card-text text-muted">Segar, manis, lembut, boba melimpah, creamy!</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="images/unggulan2.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Lemon Jasmine Tea</h5>
+                        <p class="card-text text-muted">Menyegarkan, harum, asam-manis, ringan, teh alami.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.12.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="images/unggulan3.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Peach Tea Earl Grey Tea</h5>
+                        <p class="card-text text-muted">Manis buah, wangi teh, lembut, menyegarkan.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="border: none; height: 2px; background-color: red; width: 100%;">
+
+
+    <!--Fresh Ice Cream-->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Fresh Ice Cream</h2>
+        <div class="horizontal-scroll">
+            <div class="card">
+                <img src="images/Category/FreshIceCream/ChocolateCookiesSmoothies.png" class="card-img-top" alt="Trending Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Chocolate Cookies Smoothies </h5>
+                    <p class="card-text text-muted">Cokelat pekat, renyah cookies, segar nikmat.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-danger">Habis</span>
+                    </div>
+                    <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark">Tambah</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="card">
+                <img src="images/Category/FreshIceCream/StrawberryMi-shakeMixue.png" class="card-img-top" alt="Trending Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Strawberry Mi-shake Mixue</h5>
+                    <p class="card-text text-muted">Segar stroberi, lembut, manis menggoda.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success">Tersedia</span>
+                    </div>
+                    <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark">Tambah</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="card">
+                <img src="images/Category/FreshIceCream/BobaShake.png" class="card-img-top" alt="Trending Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Boba Shake - nikmat kenyal</h5>
+                    <p class="card-text text-muted">Boba kenyal, susu lembut, segar manis.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success">Tersedia</span>
+                    </div>
+                    <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark">Tambah</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="card">
+                <img src="images/Category/FreshIceCream/CreamyManggoBoba.png" class="card-img-top" alt="Trending Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Creamy Manggo Boba</h5>
+                    <p class="card-text text-muted">Mangga lembut, boba kenyal, creamy.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success">Tersedia</span>
+                    </div>
+                    <p class="card-text"><strong>Rp.22.000,-</strong></p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark">Tambah</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="#produk-lainnya" class="btn btn-outline-danger px-4 py-2">
+                Lihat Produk Selengkapnya
+            </a>
+        </div>
+        <hr style="border: none; height: 2px; background-color: red; width: 100%;">
+
+    </div>
+
+    <!--Real Fruit Tea-->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Real Fruit Tea</h2>
+        <div class="horizontal-scroll">
+            <div class="card">
+                <img src="images/Category/RealFruitTea/PeachTeaEarlGreyTea.png" class="card-img-top" alt="Trending Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Peach Tea Earl Grey Tea</h5>
+                    <p class="card-text text-muted">Teh Earl Grey wangi, persik segar, nikmat.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success">Tersedia</span>
+                    </div>
+                    <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark">Tambah</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="card">
+                <img src="images/Category/RealFruitTea/MangoOatsJasmineTea.png" class="card-img-top" alt="Trending Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Mango Oats Jasmine Tea</h5>
+                    <p class="card-text text-muted">Teh melati wangi, mangga segar, lembut.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success">Tersedia</span>
+                    </div>
+                    <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark">Tambah</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="card">
+                <img src="images/Category/RealFruitTea/PassionFruitJasmineTea.png" class="card-img-top" alt="Trending Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Passion Fruit Jasmine Tea</h5>
+                    <p class="card-text text-muted">Teh melati harum, segar buah markisa.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success">Tersedia</span>
+                    </div>
+                    <p class="card-text"><strong>Rp.20.000,-</strong></p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark">Tambah</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="card">
+                <img src="images/Category/RealFruitTea/FreezeSqueezedLemonade.png" class="card-img-top" alt="Trending Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Freeze Squeezed Lemonade </h5>
+                    <p class="card-text text-muted">Segar, asam manis, es lemon squeeze.</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-success">Tersedia</span>
+                    </div>
+                    <p class="card-text"><strong>Rp.10.000,-</strong></p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark">Tambah</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="#produk-lainnya" class="btn btn-outline-danger px-4 py-2">
+                Lihat Produk Selengkapnya
+            </a>
+        </div>
+        <hr style="border: none; height: 2px; background-color: red; width: 100%;">
+    </div>
+
+
+        <!--Milk Tea-->
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">Milk Tea</h2>
+            <div class="horizontal-scroll">
+                <div class="card">
+                    <img src="images/Category/MilkTea/CoconutJellyMilkTea.png" class="card-img-top" alt="Trending Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Coconut Jelly Milk Tea</h5>
+                        <p class="card-text text-muted">Lembut, kelapa, manis, kenyal jelly.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="card">
+                    <img src="images/Category/MilkTea/MilkTeaWith2Toppings.png" class="card-img-top" alt="Trending Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Milk Tea With 2 Toppings</h5>
+                        <p class="card-text text-muted">Teh susu creamy, dua topping pilihan.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="card">
+                    <img src="images/Category/MilkTea/BrownSugarPearlMilkTea.png" class="card-img-top" alt="Trending Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Brown Sugar Pearl Milk Tea</h5>
+                        <p class="card-text text-muted">Teh susu manis, bola gula merah kenyal.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="card">
+                    <img src="images/Category/MilkTea/SupremeMixedMilkTea.png" class="card-img-top" alt="Trending Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Supreme Mixed Milk Tea</h5>
+                        <p class="card-text text-muted">Teh susu campuran kaya rasa, segar.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#produk-lainnya" class="btn btn-outline-danger px-4 py-2">
+                    Lihat Produk Selengkapnya
+                </a>
+            </div>
+            <hr style="border: none; height: 2px; background-color: red; width: 100%;">
+        </div>
+
+        <!--Milk Tea-->
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">Fresh Tea</h2>
+            <div class="horizontal-scroll">
+                <div class="card">
+                    <img src="images/Category/FreshTea/EarlGreyTeaWith2Toppings.png" class="card-img-top" alt="Trending Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Earl Grey Tea With 2 Toppings</h5>
+                        <p class="card-text text-muted">Teh Earl Grey harum, dipadu dua topping.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.13.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="card">
+                    <img src="images/Category/FreshTea/OriginalJasmineTea.png" class="card-img-top" alt="Trending Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Original Jasmine Tea - Fresh</h5>
+                        <p class="card-text text-muted">Teh jasmin segar, harum, menenangkan.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.10.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="card">
+                    <img src="images/Category/FreshTea/originalEarlGreyTea.png" class="card-img-top" alt="Trending Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">original Earl Grey Tea - Fresh</h5>
+                        <p class="card-text text-muted">Teh Earl Grey klasik, wangi bergamot.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.10.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="card">
+                    <img src="images/Category/FreshTea/JasmineTeaWith2Toppings.png" class="card-img-top" alt="Trending Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Jasmine Tea With 2 Toppings </h5>
+                        <p class="card-text text-muted">Teh melati segar, pilihan topping lezat</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.13.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambah</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#produk-lainnya" class="btn btn-outline-danger px-4 py-2">
+                    Lihat Produk Selengkapnya
+                </a>
+            </div>
+            <hr style="border: none; height: 2px; background-color: red; width: 100%;">
+        </div>
+
+
+                <!--Coffee-->
+                <div class="container mt-5">
+                    <h2 class="text-center mb-4">Coffee</h2>
+                    <div class="horizontal-scroll">
+                        <div class="card">
+                            <img src="images/Category/Coffee/CoffeeCookiesSundae.png" class="card-img-top" alt="Trending Product 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Coffee Cookies Sundae</h5>
+                                <p class="card-text text-muted">Kopi nikmat, cookies renyah, manis segar.</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-success">Tersedia</span>
+                                </div>
+                                <p class="card-text"><strong>Rp.18.000,-</strong></p>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="btn btn-dark">Tambah</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        
+                        <div class="card">
+                            <img src="images/Category/Coffee/CoffeeSmoothieWithIcecream.png" class="card-img-top" alt="Trending Product 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Coffee Smoothie With Ice cream</h5>
+                                <p class="card-text text-muted">Kopi creamy, es krim lezat, segar.</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-success">Tersedia</span>
+                                </div>
+                                <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="btn btn-dark">Tambah</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        
+                        <div class="card">
+                            <img src="images/Category/Coffee/CoffeeSmoothieWithIcecream.png" class="card-img-top" alt="Trending Product 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Coffee Smoothie With Ice cream</h5>
+                                <p class="card-text text-muted">Smoothie kopi lembut, es krim nikmat.</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-success">Tersedia</span>
+                                </div>
+                                <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="btn btn-dark">Tambah</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        
+                        <div class="card">
+                            <img src="images/Category/Coffee/CoffeeBobaSundae.png" class="card-img-top" alt="Trending Product 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Coffee Boba Sundae -Fresh </h5>
+                                <p class="card-text text-muted">Kombinasi kopi, boba, dan es krim.</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-success">Tersedia</span>
+                                </div>
+                                <p class="card-text"><strong>Rp.18.000,-</strong></p>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="btn btn-dark">Tambah</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#produk-lainnya" class="btn btn-outline-danger px-4 py-2">
+                            Lihat Produk Selengkapnya
+                        </a>
+                    </div>
+                    <hr style="border: none; height: 2px; background-color: red; width: 100%;">
+                </div>
+
+    <!-- Bootstrap footer -->
+    <footer class="bg-dark py-5">
+        <div class="container">
+            <div class="row text-white g-4">
+                <div class="col-md-6 col-lg-3">
+                    <a class="text-uppercase text-decoration-none brand text-white" href="index.html">Mixue</a>
+                    <p class="text-white text-muted mt-3">Nikmati kesegaran Mixue, minuman dan dessert favorit Anda.</p>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Contact Us</h5>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </span>
+                        <span class="fw-light">
+                            Santiago, Tuminting, Manado
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class="fas fa-phone-alt"></i>
+                        </span>
+                        <span class="fw-light">
+                            00 000 000 </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Follow Us</h5>
+                    <div>
+                        <ul class="list-unstyled d-flex">
+                            <li>
+                                <a href="https://www.facebook.com/"
+                                    class="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class="fab fa-facebook-f">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/mixuemanadosulut/"
+                                    class="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class="fab fa-instagram">
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer -->
+
+
+
+    <!-- isotope js cdn -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- bootstrap js cdn -->
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

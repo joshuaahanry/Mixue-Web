@@ -1,0 +1,151 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #333 !important;
+}
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.search-bar .form-control {
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+.search-bar .btn {
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+.product-card {
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.product-card img {
+    border-radius: 15px 15px 0 0;
+}
+.horizontal-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+.horizontal-scroll .card {
+    display: inline-block;
+    width: 250px;
+    margin-right: 20px;
+    white-space: normal;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.testimonial-section {
+    background-color: #fff;
+    padding: 80px 0;
+    margin-top: 80px;
+}
+.testimonial-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.testimonial-card::before {
+    content: "“";
+    font-size: 80px;
+    color: #6c757d;
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    opacity: 0.2;
+}
+.testimonial-card p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #555;
+}
+.testimonial-card h5 {
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+}
+.about-section {
+    background-color: #fff;
+    padding: 80px 0;
+}
+.about-section img {
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.contact-section {
+    background-color: #fff;
+    padding: 80px 0;
+}
+.contact-section .form-control {
+    border-radius: 15px;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+}
+.contact-section .btn {
+    border-radius: 15px;
+    padding: 12px 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+}
+.contact-section .btn:hover {
+    background-color: #555;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 80px;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sponsor-container {
+width: 100%;
+overflow: hidden;
+position: relative;
+}
+
+.sponsor-track {
+display: flex;
+animation: scroll 20s linear infinite;
+}
+
+.sponsor-logo {
+flex: 0 0 auto;
+margin-right: 40px; 
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@keyframes scroll {
+0% {
+    transform: translateX(0);
+}
+100% {
+    transform: translateX(-50%); 
+}
+}
