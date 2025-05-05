@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil Pengguna</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .profile-card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #d70000;
+    }
+    .edit-btn {
+      background-color: #d70000;
+      color: #fff;
+      border-radius: 20px;
+    }
+    .logout-btn {
+      background-color: #dc3545;
+      color: white;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+    .label {
+      font-weight: bold;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+ <!-- bootsrap navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-danger py-2 fixed-top">
+  <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="index.html">
+          <img src="../../../images/logo.png" alt="site icon" style="width: 100px; height: auto;">
+      </a>
+
+      <!-- Icon Buttons -->
+      <div class="order-lg-2 nav-btns d-flex align-items-center">
+          <button type="button" class="btn text-white position-relative me-2">
+              <i class="fa fa-shopping-cart"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
+          </button>
+          <button type="button" class="btn text-white position-relative">
+              <i class="fa fa-user"></i>
+          </button>
+      </div>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+          <ul class="navbar-nav mx-auto text-center">
+              <li class="nav-item px-2">
+                  <a class="nav-link text-uppercase text-white" href="#header">home</a>
+              </li>
+      
+              <!-- Dropdown Kategori -->
+              <li class="nav-item dropdown px-2">
+                  <a class="nav-link dropdown-toggle text-uppercase text-white" href="#" id="kategoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Kategori
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="kategoriDropdown">
+                      <li><a class="dropdown-item" href="#ice-cream">Fresh Ice Cream</a></li>
+                      <li><a class="dropdown-item" href="#tea">Real Fruit Tea</a></li>
+                      <li><a class="dropdown-item" href="#smoothies">Milk Tea</a></li>
+                      <li><a class="dropdown-item" href="#coffee">Fresh Tea</a></li>
+                      <li><a class="dropdown-item" href="#coffee">Coffee</a></li>
+                  </ul>
+              </li>
+      
+              <li class="nav-item px-2">
+                  <a class="nav-link text-uppercase text-white" href="#blogs">blogs</a>
+              </li>
+          </ul>
+      </div>
+      
+  </div>
+</nav>
+
+<!-- end of navbar -->
+
+
+<div class="container my-5">
+  <div class="profile-card text-center">
+    <!-- Foto & Nama -->
+    <img src="img/stevandri.png" alt="Foto Profil" class="profile-img mb-3">
+    <h4 class="fw-bold">Stevandri V. Patty</h4>
+    <p class="text-muted">pattystevandri@gmail.com</p>
+
+    <!-- Tombol Edit -->
+    <button class="btn edit-btn px-4 mb-4">Edit Profil</button>
+
+    <!-- Info Kontak -->
+    <div class="text-start">
+      <p><span class="label">Telepon:</span>081248798145</p>
+      <p><span class="label">Alamat:</span> Jl. Sam Ratulangi No.88, Manado</p>
+    </div>
+
+    <!-- Tombol Logout -->
+    <div class="d-grid mt-4">
+      <button class="btn logout-btn">Logout</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
