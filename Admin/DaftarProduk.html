@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semua Produk</title>
+  <link rel="stylesheet" href="css/homepage.css">
+   <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+    }
+
+.sidebar {   
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 1500vh;       
+  background-color: #E4181F;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  z-index: 1000;          
+}
+
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .nav-item {
+      background-color: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      justify-content: space-between;
+    }
+
+    .nav-item.primary {
+      background-color: white;
+      color: #E4181F;
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    .badgenew {
+      background: white;
+      color: #E4181F;
+      font-size: 12px;
+      border-radius: 12px;
+      padding: 2px 8px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        z-index: 1000;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .menu-toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #E4181F;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 12px;
+        z-index: 1100;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <img src="img/logo.png" alt="Mixue Logo">
+    </div>
+    <div class="nav-item primary">
+      <span><i class="bi bi-shop icon"></i>Semua Produk</span>
+    </div>
+    <div class="nav-item">
+      <span><i class="bi bi-pencil-square icon"></i>Edit Produk</span>
+    </div>
+    <div class="nav-item">
+      <span><i class="bi bi-calendar3 icon"></i>Pesanan</span>
+      <span class="badgenew">8</span>
+    </div>
+    <div class="nav-item">
+      <span><i class="bi bi-cart3 icon"></i>Penjualan</span>
+      <span class="badgenew">3</span>
+    </div>
+  </div>
+
+    <!--Produk Fresh Ice Cream-->
+   <div class="container mt-2">
+        <h2 class="text-center mb-2 py-5 display-5"><b>Fresh Ice Cream</b></h2>
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/ChocolateCookiesSmoothies.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Chocolate Cookies Smoothies</h5>
+                        <p class="card-text text-muted">Cokelat pekat, renyah cookies, segar nikmat.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/StrawberryMi-shakeMixue.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Strawberry Mi-shake Mixue</h5>
+                        <p class="card-text text-muted">Segar stroberi, lembut, manis menggoda.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/BobaShake.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Boba Shake - nikmat kenyal</h5>
+                        <p class="card-text text-muted">Boba kenyal, susu lembut, segar manis.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/CreamyManggoBoba.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Creamy Manggo Boba</h5>
+                        <p class="card-text text-muted">Mangga lembut, boba kenyal, creamy.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.22.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/BerryBeanSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Berry Bean Sundae</h5>
+                        <p class="card-text text-muted">Manis, segar, beri, lembut, creamy.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/OreoSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Oreo Sundae</h5>
+                        <p class="card-text text-muted">Cokelat, renyah, lembut, manis, creamy.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/StrawberryLuckySundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Strawberry Lucky Sundae</h5>
+                        <p class="card-text text-muted">Segar, stroberi, manis, lembut, creamy.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/BobaSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">boba Sundae </h5>
+                        <p class="card-text text-muted">Kenyal, manis, lembut, creamy, segar.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/mangoSmoothiesWithIce.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mango Smoothies With Ice Cream</h5>
+                        <p class="card-text text-muted">Mangga, segar, manis, creamy, dingin.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/StrawberrySmoothies.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Strawberry Smoothies</h5>
+                        <p class="card-text text-muted">Stroberi, segar, manis, dingin, lembut.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/MangoSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mango Sundae</h5>
+                        <p class="card-text text-muted">Mangga, manis, segar, lembut, creamy.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/Sundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Sundae</h5>
+                        <p class="card-text text-muted">Lembut, manis, creamy, segar, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/StrawberrySundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Strawberry Sundae</h5>
+                        <p class="card-text text-muted">Stroberi, manis, segar, lembut, creamy.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/MixSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mix Sundae</h5>
+                        <p class="card-text text-muted">Campuran, manis, creamy, segar, lezat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/StrawberryIceCream.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Strawberry Ice Cream</h5>
+                        <p class="card-text text-muted">Stroberi, manis, creamy, segar, lembut.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.8.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/VanillaIceCream.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Vanilla Ice Cream </h5>
+                        <p class="card-text text-muted">Vanila, creamy, lembut, manis, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.8.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/KiwiSmoothies.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Kiwi Smoothies </h5>
+                        <p class="card-text text-muted">Kiwi, segar, asam, manis, lembut.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/IceCreamJasmineTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Ice Cream Jasmine Tea</h5>
+                        <p class="card-text text-muted">Teh melati, creamy, harum, segar, manis.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.13.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshIceCream/IceCreamEarlGreyTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Ice Cream Earl Grey Tea</h5>
+                        <p class="card-text text-muted">Teh Earl Grey, creamy, harum, segar, manis.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.13.000,-</strong></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--Real Fruit Tea-->
+        <div class="container mt-5">
+        <h2 class="text-center mb-4 py-5 display-5"><b>Real Fruit Tea</b></h2>
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/RealFruitTea/PeachTeaEarlGreyTea.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Peach Tea Earl Grey Tea </h5>
+                        <p class="card-text text-muted">Teh Earl Grey, peach, segar, harum, manis.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/RealFruitTea/MangoOatsJasmineTea.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Mango Oats Jasmine Tea</h5>
+                        <p class="card-text text-muted">Mangga, oat, teh melati, segar, manis.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/RealFruitTea/HawaiianFruitTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Hawaiian Fruit Tea</h5>
+                        <p class="card-text text-muted">Tropis, segar, buah, manis, harum.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.22.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/RealFruitTea/PassionFruitJasmineTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Passion Fruit Jasmine Tea</h5>
+                        <p class="card-text text-muted">Markisa, teh melati, segar, harum, manis.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.20.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/RealFruitTea/LemonJasmineTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Lemon Jasmine Tea</h5>
+                        <p class="card-text text-muted">Jeruk nipis, teh melati, segar, harum, asam.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.12.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/RealFruitTea/lemonEarlGreyTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">lemon Earl Grey Tea </h5>
+                        <p class="card-text text-muted">Jeruk nipis, teh Earl Grey, segar, harum, asam.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.12.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/RealFruitTea/FreezeSqueezedLemonade.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Freeze Squeezed Lemonade</h5>
+                        <p class="card-text text-muted">Segar, asam, manis, dingin, menyegarkan.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.10.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/RealFruitTea/KiwiFruitTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Kiwi Fruit Tea</h5>
+                        <p class="card-text text-muted">Kiwi, segar, asam, manis, harum.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.10.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <!--Milktea-->
+        <div class="container mt-5">
+        <h2 class="text-center mb-4 py-5 display-5"><b>Milk Tea</b></h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/MilkTea/OatsMilkTea.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Oats Milk Tea </h5>
+                        <p class="card-text text-muted">Oat, creamy, manis, segar, lembut.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/MilkTea/RedBeanMilkTea.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Red Bean Milk Tea </h5>
+                        <p class="card-text text-muted">Kacang merah, creamy, manis, lembut, segar.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/MilkTea/CoconutJellyMilkTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coconut Jelly Milk Tea</h5>
+                        <p class="card-text text-muted">Kelapa, jelly, creamy, manis, segar.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/MilkTea/MilkTeaWith2Toppings.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Milk Tea With 2 Toppings</h5>
+                        <p class="card-text text-muted">Creamy, manis, lezat, segar, variatif.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/MilkTea/BrownSugarPearlMilkTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Brown Sugar Pearl Milk Tea</h5>
+                        <p class="card-text text-muted">Gula merah, pearl, creamy, manis, kenyal.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/MilkTea/PearlMilkTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Pearl Milk Tea </h5>
+                        <p class="card-text text-muted">Kenyal, creamy, manis, segar, lezat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/MilkTea/SupremeMixedMilkTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Supreme Mixed Milk Tea</h5>
+                        <p class="card-text text-muted">Krimi, manis, kaya rasa, segar, lezat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.19.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--FreshTea-->
+        <div class="container mt-5">
+        <h2 class="text-center mb-4 py-5 display-6"><b>Fresh Tea</b></h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshTea/EarlGreyTeaWith2Toppings.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Earl Grey Tea With 2 Toppings</h5>
+                        <p class="card-text text-muted">Teh Earl Grey, harum, segar, variatif, lezat.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.13.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshTea/OriginalJasmineTea.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Original Jasmine Tea </h5>
+                        <p class="card-text text-muted">Teh melati, harum, segar, ringan, alami.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.10.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshTea/originalEarlGreyTea.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Original Earl Grey Tea </h5>
+                        <p class="card-text text-muted">Teh Earl Grey, harum, segar, kuat, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.10.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/FreshTea/JasmineTeaWith2Toppings.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Jasmine Tea With 2 Toppings </h5>
+                        <p class="card-text text-muted">Teh melati, harum, segar, variatif, lezat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.13.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--Coofee-->
+        <div class="container mt-5">
+        <h2 class="text-center mb-4 py-5 display-5"><b>Coffee</b></h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/Coffee/LemonCoffee.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Lemon Coffee</h5>
+                        <p class="card-text text-muted">Kopi, jeruk nipis, segar, asam, nikmat.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.14.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/Coffee/AmericanoCoffee.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Americano Coffee </h5>
+                        <p class="card-text text-muted">Kopi, kuat, pahit, segar, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.12.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/Coffee/CoffeeBobaSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Boba Sundae </h5>
+                        <p class="card-text text-muted">Kopi, kenyal, manis, creamy, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.18.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/Coffee/CoffeeCookiesSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Cookies Sundae</h5>
+                        <p class="card-text text-muted">Kopi, cookies, creamy, manis, lezat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.18.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/Coffee/CoffeeSmoothieWithIcecream.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Smoothie With Ice cream</h5>
+                        <p class="card-text text-muted">Kopi, es krim, creamy, segar, nikmat."
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/Coffee/MochaMiShake.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mocha Mi Shake</h5>
+                        <p class="card-text text-muted">Cokelat, kopi, creamy, manis, lezat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="img/Category/Coffee/CoffeeIceCream.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Ice Cream</h5>
+                        <p class="card-text text-muted">Kopi, creamy, manis, segar, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
+
+
+  
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

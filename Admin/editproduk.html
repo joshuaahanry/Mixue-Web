@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Produk</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+    }
+
+.sidebar {   
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 280vh;       
+  background-color: #E4181F;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  z-index: 1000;          
+}
+
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .nav-item {
+      background-color: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      justify-content: space-between;
+    }
+
+    .nav-item.primary {
+      background-color: white;
+      color: #E4181F;
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    .badgenew {
+      background: white;
+      color: #E4181F;
+      font-size: 12px;
+      border-radius: 12px;
+      padding: 2px 8px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        z-index: 1000;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .menu-toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #E4181F;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 12px;
+        z-index: 1100;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <!--Ini sidebar-->
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <img src="img/logo.png" alt="Mixue Logo">
+    </div>
+    <div class="nav-item">
+      <span><i class="bi bi-shop icon"></i>Semua Produk</span>
+    </div>
+    <div class="nav-item primary">
+      <span><i class="bi bi-pencil-square icon"></i>Edit Produk</span>
+    </div>
+    <div class="nav-item">
+      <span><i class="bi bi-calendar3 icon"></i>Pesanan</span>
+      <span class="badgenew">8</span>
+    </div>
+    <div class="nav-item">
+      <span><i class="bi bi-cart3 icon"></i>Penjualan</span>
+      <span class="badgenew">3</span>
+    </div>
+  </div>
+
+<!--Ini edit produk-->
+<div class="container my-5">
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Detail Produk</th>
+          <th scope="col">Harga</th>
+          <th scope="col">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Produk 1-->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/BerryBeanSundae.png" alt="Product 1" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Berry Bean Sundae</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 2 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/BobaShake.png" alt="Product 2" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Boba Shake</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 3 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/BobaSundae.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Boba Sundae</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 4 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/ChocolateCookiesSmoothies.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Chocolate Cookies Smoothies</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 5 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/CreamyManggoBoba.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Creamy Manggo Boba</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 6 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/IceCreamEarlGreyTea.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Ice Cream Earl Grey Tea</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 7 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/IceCreamJasmineTea.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Ice Cream Jasmine Tea</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 8 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/KiwiSmoothies.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Kiwi Smoothies</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 9 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/mangoSmoothiesWithIce.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Mango Smoothies With Ice</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 10 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/MangoSundae.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Mango Sundae</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 11 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/MixSundae.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Mix Sundae</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 12 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/OreoSundae.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Oreo Sundae</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 13 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/StrawberryIceCream.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Strawberry Ice Cream</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 14 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/StrawberryLuckySundae.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Strawberry Lucky Sundae</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 15 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/StrawberryMi-shakeMixue.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Strawberry Mi-shake Mixue</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 16 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/StrawberrySmoothies.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Strawberry Smoothies</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 17 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/StrawberrySundae.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Strawberry Sundae</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 18 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/Sundae.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Sundae</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+        <!-- Produk 19 -->
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img src="img/Category/FreshIceCream/VanillaIceCream.png" alt="Product 3" class="me-3" style="width: 80px; height: auto;">
+              <div>
+                <h6 class="mb-0">Vanilla Ice Cream</h6>
+              </div>
+            </div>
+          </td>
+          <td>
+            <input type="number" class="form-control" value="16.000" min="0" step="0.01">
+          </td>
+          <td>
+            <input type="number" class="form-control" value="1" min="1">
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-end mt-4">
+    <button class="btn btn-primary">Simpan Perubahan</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
