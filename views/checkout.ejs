@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout Pesanan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding-bottom: 100px;
+    }
+    .container {
+      max-width: 600px;
+      margin-top: 5%;
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+    }
+    h2 {
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #d70000;
+    }
+    .product-card {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .product-info {
+      flex-grow: 1;
+    }
+    .product-name {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    .product-qty, .product-price {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    label {
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    input[type="text"], input[type="tel"], textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .btn-pesan {
+      background-color: #d70000;
+      color: white;
+      border-radius: 25px;
+      padding: 0.75rem 2rem;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 1rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    .btn-pesan:hover {
+      background-color: #a10000;
+    }
+    .btn-back {
+      background-color: #6c757d;
+      color: white;
+      border-radius: 25px;
+      padding: 0.75rem 2rem;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 0.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    .btn-back:hover {
+      background-color: #5a6268;
+    }
+    .total-price {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      text-align: right;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Checkout Pesanan</h2>
+
+    <form action="/checkout/submit" method="POST">
+      <div>
+        <% let totalPrice = 0; %>
+        <% cartItems.forEach(item => { %>
+          <div class="product-card">
+            <div class="product-info">
+              <div class="product-name"><%= item.name %></div>
+              <div class="product-qty">Jumlah: <%= item.quantity %></div>
+              <div class="product-price">Harga: Rp <%= item.price.toLocaleString('id-ID') %></div>
+            </div>
+            <div class="product-subtotal">
+              Rp <%= (item.price * item.quantity).toLocaleString('id-ID') %>
+            </div>
+          </div>
+          <% totalPrice += item.price * item.quantity; %>
+          <input type="hidden" name="products[<%= item.product_id %>]" value="<%= item.quantity %>" />
+        <% }) %>
+      </div>
+
+      <div class="total-price">
+        Total: Rp <%= totalPrice.toLocaleString('id-ID') %>
+      </div>
+
+      <label for="recipient_name">Nama Penerima</label>
+      <input type="text" id="recipient_name" name="recipient_name" required />
+
+      <label for="recipient_phone">Nomor Penerima</label>
+      <input type="tel" id="recipient_phone" name="recipient_phone" required pattern="[0-9+]+" placeholder="Contoh: 08123456789" />
+
+      <label for="address">Alamat Pengiriman</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="payment_method">Metode Pembayaran</label>
+      <select id="payment_method" name="payment_method" required>
+        <option value="" disabled selected>Pilih metode pembayaran</option>
+        <option value="transfer">Transfer Bank</option>
+        <option value="cod">Bayar di Tempat (COD)</option>
+        <option value="ewallet">E-Wallet</option>
+      </select>
+
+      <button type="button" class="btn-back" onclick="window.location.href='/keranjang'">Kembali ke Keranjang</button>
+      <button type="submit" class="btn-pesan">Bayar Sekarang</button>
+    </form>
+  </div>
+</body>
+</html>

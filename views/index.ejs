@@ -1,0 +1,177 @@
+<%
+function formatRupiah(angka) {
+  if (!angka && angka !== 0) return "-";
+  return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+%>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/homepage.css" />
+</head>
+
+<body>
+
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-danger py-2 fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="/">
+      <img src="/images/logo.png" alt="site icon" style="width: 100px; height: auto;" />
+    </a>
+
+    <div class="order-lg-2 nav-btns d-flex align-items-center">
+      <button type="button" class="btn text-white position-relative me-2" onclick="location.href='/keranjang'">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary"><%= cart ? cart.length : 0 %></span>
+      </button>
+      <button type="button" class="btn text-white position-relative" onclick="location.href='/notifikasi'">
+        <i class="fa fa-bell"></i>
+      </button>
+      <button type="button" class="btn text-white position-relative" onclick="location.href='/profil'">
+        <i class="fa fa-user"></i>
+      </button>
+    </div> <!-- Close nav-btns div here -->
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item px-2"><a class="nav-link text-uppercase text-white" href="/index">home</a></li>
+        <li class="nav-item dropdown px-2">
+          <a class="nav-link dropdown-toggle text-uppercase text-white" href="#" id="kategoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori</a>
+          <ul class="dropdown-menu" aria-labelledby="kategoriDropdown">
+            <li><a class="dropdown-item" href="#ice-cream">Fresh Ice Cream</a></li>
+            <li><a class="dropdown-item" href="#tea">Real Fruit Tea</a></li>
+            <li><a class="dropdown-item" href="#smoothies">Milk Tea</a></li>
+            <li><a class="dropdown-item" href="#coffee">Fresh Tea</a></li>
+            <li><a class="dropdown-item" href="#coffee">Coffee</a></li>
+          </ul>
+        </li>
+        <li class="nav-item px-2"><a class="nav-link text-uppercase text-white" href="#blogs">blogs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Search Bar -->
+  <div class="container mt-5 pt-5">
+    <div class="search-bar">
+      <form class="d-flex" action="/search" method="GET">
+        <input class="form-control me-2" type="search" name="q" placeholder="Cari Produk..." aria-label="Search" />
+        <button class="btn btn-outline-dark" type="submit">Cari</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Produk Unggulan -->
+  <% for(let i = 0; i <= 6; i++) { %>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4"><%= categoryTitles[i] || "Kategori" + i %></h2>
+    
+    <div class="<%= (i === 0) ? 'row' : 'horizontal-scroll d-flex flex-nowrap gap-3' %>">
+      <% if (productsByCategory[i] && productsByCategory[i].length > 0) { %>
+        <% productsByCategory[i].forEach(product => { %>
+          <div class="col-sm-6 col-md-4 mb-4" style="min-width: 250px;">
+            <div class="card product-card h-100">
+              <img src="<%= product.image_url || '/default.jpg' %>" class="card-img-top" alt="<%= product.name %>" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title"><%= product.name %></h5>
+                <p class="card-text text-muted"><%= product.description || "Deskripsi belum tersedia." %></p>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-success">Tersedia</span>
+                </div>
+                <p class="card-text"><strong>Rp <%= formatRupiah(product.price) %></strong></p>
+                <p class="card-text">Stok tersedia: <%= product.stock %></p>
+                <form action="/add-to-cart" method="POST" class="mt-auto">
+                <input type="hidden" name="product_id" value="<%= product.id %>" />
+                <input type="hidden" name="quantity" value="1" />
+                <button type="submit" class="btn btn-dark w-100">Tambah</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <div class="col-12">
+          <p class="text-center">Cek terus kategorinya ya</p>
+        </div>
+      <% } %>
+    </div>
+
+    
+
+    <hr style="border: none; height: 2px; background-color: red; width: 100%; margin-top: 2rem; margin-bottom: 2rem;">
+  </div>
+<% } %>
+
+    <!-- Bootstrap footer -->
+    <footer class="bg-dark py-5">
+        <div class="container">
+            <div class="row text-white g-4">
+                <div class="col-md-6 col-lg-3">
+                    <a class="text-uppercase text-decoration-none brand text-white" href="index.html">Mixue</a>
+                    <p class="text-white text-muted mt-3">Nikmati kesegaran Mixue, minuman dan dessert favorit Anda.</p>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Contact Us</h5>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </span>
+                        <span class="fw-light">
+                            Santiago, Tuminting, Manado
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class="fas fa-phone-alt"></i>
+                        </span>
+                        <span class="fw-light">
+                            00 000 000 </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Follow Us</h5>
+                    <div>
+                        <ul class="list-unstyled d-flex">
+                            <li>
+                                <a href="https://www.facebook.com/"
+                                    class="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class="fab fa-facebook-f">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/mixuemanadosulut/"
+                                    class="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class="fab fa-instagram">
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer -->
+
+
+
+    <!-- isotope js cdn -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- bootstrap js cdn -->
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

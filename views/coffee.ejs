@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coffee</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .header {
+      background-color: #d70000;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .product-card {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .product-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product-body {
+      padding: 0.75rem;
+    }
+    .product-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .product-price {
+      font-weight: bold;
+      color: red;
+    }
+    .badge-antrian {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: red;
+      color: white;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- bootsrap navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-danger py-2 fixed-top">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="/index">
+            <img src="../../../images/logo.png" alt="site icon" style="width: 100px; height: auto;">
+        </a>
+
+        <!-- Icon Buttons -->
+        <div class="order-lg-2 nav-btns d-flex align-items-center">
+            <button type="button" class="btn text-white position-relative me-2">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
+            </button>
+            <button type="button" class="btn text-white position-relative">
+              <i class="fa fa-bell"></i>
+          </button>
+            <button type="button" class="btn text-white position-relative">
+                <i class="fa fa-user"></i>
+            </button>
+        </div>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item px-2">
+                    <a class="nav-link text-uppercase text-white" href="/index">home</a>
+                </li>
+        
+                <!-- Dropdown Kategori -->
+                <li class="nav-item dropdown px-2">
+                    <a class="nav-link dropdown-toggle text-uppercase text-white" href="#" id="kategoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Kategori
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="kategoriDropdown">
+                        <li><a class="dropdown-item" href="/freshicecream">Fresh Ice Cream</a></li>
+                        <li><a class="dropdown-item" href="/RealFruitTea">Real Fruit Tea</a></li>
+                        <li><a class="dropdown-item" href="/milktea">Milk Tea</a></li>
+                        <li><a class="dropdown-item" href="/FreshTea">Fresh Tea</a></li>
+                        <li><a class="dropdown-item" href="/coffee">Coffee</a></li>
+                    </ul>
+                </li>
+        
+                <li class="nav-item px-2">
+                    <a class="nav-link text-uppercase text-white" href="#blogs">blogs</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+<!-- end of navbar -->
+
+    <!--ini produk-->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 py-5 display-3"><b>Coffee</b></h2>
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="/Kategoriproduk/images/Category/Coffee/LemonCoffee.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Lemon Coffee</h5>
+                        <p class="card-text text-muted">Kopi, jeruk nipis, segar, asam, nikmat.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.14.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="/Kategoriproduk/images/Category/Coffee/AmericanoCoffee.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Americano Coffee </h5>
+                        <p class="card-text text-muted">Kopi, kuat, pahit, segar, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.12.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="/Kategoriproduk/images/Category/Coffee/CoffeeBobaSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Boba Sundae </h5>
+                        <p class="card-text text-muted">Kopi, kenyal, manis, creamy, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.18.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="/Kategoriproduk/images/Category/Coffee/CoffeeCookiesSundae.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Cookies Sundae</h5>
+                        <p class="card-text text-muted">Kopi, cookies, creamy, manis, lezat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.18.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="/Kategoriproduk/images/Category/Coffee/CoffeeSmoothieWithIcecream.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Smoothie With Ice cream</h5>
+                        <p class="card-text text-muted">Kopi, es krim, creamy, segar, nikmat."
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="/Kategoriproduk/images/Category/Coffee/MochaMiShake.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mocha Mi Shake</h5>
+                        <p class="card-text text-muted">Cokelat, kopi, creamy, manis, lezat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="/Kategoriproduk/images/Category/Coffee/CoffeeIceCream.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coffee Ice Cream</h5>
+                        <p class="card-text text-muted">Kopi, creamy, manis, segar, nikmat.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success">Tersedia</span>
+                        </div>
+                        <p class="card-text"><strong>Rp.16.000,-</strong></p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-dark">Tambahkan ke keranjang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

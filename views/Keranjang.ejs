@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pesanan Saya</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .order-header {
+      background-color: #fff;
+      color: rgb(5, 5, 5);
+      padding: 1rem;
+      font-weight: bold;
+      margin-top: 5%;
+    }
+    .product-card {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 0;
+    }
+    .product-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .btn-pesan {
+      background-color: #d70000;
+      color: white;
+      border-radius: 25px;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+    }
+    .total-bar {
+      font-weight: bold;
+    }
+    .qty-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .qty-control button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #ccc;
+      background: white;
+      color: #333;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .qty {
+      min-width: 24px;
+      text-align: center;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-danger py-2 fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="/">
+      <img src="/images/logo.png" alt="site icon" style="width: 100px; height: auto;" />
+    </a>
+
+    <div class="order-lg-2 nav-btns d-flex align-items-center">
+      <!-- Tombol Cart -->
+      <a href="/keranjang" class="btn text-white position-relative me-2" style="text-decoration: none;">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">
+          <%= cart ? cart.length : 0 %>
+        </span>
+      </a>
+
+      <!-- Tombol Notifikasi -->
+      <a href="/notifikasi" class="btn text-white position-relative me-2" style="text-decoration: none;">
+        <i class="fa fa-bell"></i>
+      </a>
+
+      <!-- Tombol User / Profil -->
+      <a href="/profil" class="btn text-white position-relative" style="text-decoration: none;">
+        <i class="fa fa-user"></i>
+      </a>
+    </div>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item px-2"><a class="nav-link text-uppercase text-white" href="/index">home</a></li>
+        <li class="nav-item dropdown px-2">
+          <a class="nav-link dropdown-toggle text-uppercase text-white" href="#" id="kategoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori</a>
+          <ul class="dropdown-menu" aria-labelledby="kategoriDropdown">
+            <li><a class="dropdown-item" href="#ice-cream">Fresh Ice Cream</a></li>
+            <li><a class="dropdown-item" href="#tea">Real Fruit Tea</a></li>
+            <li><a class="dropdown-item" href="#smoothies">Milk Tea</a></li>
+            <li><a class="dropdown-item" href="#coffee">Fresh Tea</a></li>
+            <li><a class="dropdown-item" href="#coffee">Coffee</a></li>
+          </ul>
+        </li>
+        <li class="nav-item px-2"><a class="nav-link text-uppercase text-white" href="#blogs">blogs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <div class="container my-5 bg-white rounded shadow-sm" style="margin-top: 100px;">
+    <div class="order-header">
+      <h3>Pesanan Saya</h3>
+    </div>
+
+    <form id="orderForm" class="p-3" action="/checkout" method="POST">
+      <% if (!cart || cart.length === 0) { %>
+        <p>Keranjang anda kosong.</p>
+      <% } else { %>
+        <% cart.forEach((item) => { %>
+          <% if(item.product) { %>
+            <div class="d-flex align-items-center product-card" data-product-id="<%= item.product.id %>">
+              <input
+                class="form-check-input me-3 item-check"
+                type="checkbox"
+                name="selected[]"
+                value="<%= item.product.id %>"
+                <%= item.selected ? "checked" : "" %>
+              />
+              <input type="hidden" name="products[<%= item.product.id %>][id]" value="<%= item.product.id %>" />
+              <input type="hidden" name="products[<%= item.product.id %>][price]" value="<%= item.product.price %>" />
+              <input type="hidden" name="products[<%= item.product.id %>][qty]" class="qty-input" value="<%= item.quantity %>" min="1" />
+
+              <img src="<%= item.product.image_url %>" class="product-img me-3" alt="<%= item.product.name %>" />
+              <div class="flex-grow-1">
+                <div class="fw-bold mb-2">
+                  <%= item.product.name %>
+                </div>
+                <div class="qty-control">
+                  <button type="button" class="btn-decrease" title="Kurangi jumlah">-</button>
+                  <span class="qty"><%= item.quantity %></span>
+                  <button type="button" class="btn-increase" title="Tambah jumlah">+</button>
+
+                  <!-- Tombol hapus hanya icon tanpa teks -->
+                  <button type="button" class="btn btn-sm btn-outline-danger btn-delete ms-3" title="Hapus produk ini">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+                <div class="mt-2">Harga per pcs: Rp. <span class="harga"><%= item.product.price %></span></div>
+              </div>
+              <div class="item-total text-end flex-shrink-0" style="width: 120px;">
+                Rp. <span></span>
+              </div>
+            </div>
+          <% } else { %>
+            <p>Item di keranjang tidak valid.</p>
+          <% } %>
+        <% }) %>
+
+        <div class="d-flex justify-content-between align-items-center total-bar mt-3">
+          <div>Total :</div>
+          <div class="text-danger">Rp. <span id="grandTotal"></span></div>
+        </div>
+
+        <div class="d-grid mt-4">
+          <button type="submit" class="btn btn-pesan">Pesan Sekarang</button>
+        </div>
+      <% } %>
+    </form>
+  </div>
+
+  <script>
+  document.getElementById('orderForm').addEventListener('submit', function(e) {
+  const checkedItems = document.querySelectorAll('.item-check:checked');
+  if (checkedItems.length === 0) {
+    e.preventDefault();
+    alert('Pilih minimal satu produk sebelum melakukan pemesanan.');
+  }
+});
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const itemCards = document.querySelectorAll(".product-card");
+    const grandTotalEl = document.getElementById("grandTotal");
+
+    function updateTotals() {
+      let grandTotal = 0;
+
+      itemCards.forEach((card) => {
+        const checkbox = card.querySelector(".item-check");
+        const qtySpan = card.querySelector(".qty");
+        const priceSpan = card.querySelector(".harga");
+        const totalSpan = card.querySelector(".item-total span");
+
+        const qty = parseInt(qtySpan?.textContent?.trim() || "1");
+        const price = parseInt(priceSpan?.textContent?.replace(/\D/g, "") || "0");
+        const total = qty * price;
+
+        if (totalSpan) {
+          totalSpan.textContent = total.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+        }
+
+        if (checkbox?.checked) {
+          grandTotal += total;
+        }
+      });
+
+      grandTotalEl.textContent = grandTotal.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+    }
+
+    async function updateQuantityToServer(productId, newQty) {
+      try {
+        const response = await fetch('/keranjang/update-qty', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product_id: productId, quantity: newQty }),
+        });
+        const data = await response.json();
+        if (!data.success) {
+          alert('Gagal memperbarui kuantitas.');
+        }
+      } catch (error) {
+        console.error('Error saat update quantity:', error);
+        alert('Terjadi kesalahan saat memperbarui kuantitas.');
+      }
+    }
+
+    async function updateSelectedToServer(productId, selected) {
+      try {
+        const response = await fetch('/keranjang/update-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product_id: productId, selected }),
+        });
+        const data = await response.json();
+        if (!data.success) {
+          alert('Gagal memperbarui pilihan produk.');
+        }
+      } catch (error) {
+        console.error('Error saat update pilihan produk:', error);
+        alert('Terjadi kesalahan saat memperbarui pilihan produk.');
+      }
+    }
+
+    // Event untuk tombol plus dan minus kuantitas
+    itemCards.forEach((card) => {
+      const btnIncrease = card.querySelector(".btn-increase");
+      const btnDecrease = card.querySelector(".btn-decrease");
+      const qtySpan = card.querySelector(".qty");
+      const qtyInput = card.querySelector(".qty-input");
+      const checkbox = card.querySelector(".item-check");
+      const productId = card.getAttribute("data-product-id");
+
+      btnIncrease.addEventListener("click", async () => {
+        let qty = parseInt(qtySpan.textContent);
+        qty++;
+        qtySpan.textContent = qty;
+        if (qtyInput) qtyInput.value = qty;
+        await updateQuantityToServer(productId, qty);
+        updateTotals();
+      });
+
+      btnDecrease.addEventListener("click", async () => {
+        let qty = parseInt(qtySpan.textContent);
+        if (qty > 1) {
+          qty--;
+          qtySpan.textContent = qty;
+          if (qtyInput) qtyInput.value = qty;
+          await updateQuantityToServer(productId, qty);
+          updateTotals();
+        }
+      });
+
+      // Event checkbox untuk pilih item
+      checkbox.addEventListener("change", async () => {
+        await updateSelectedToServer(productId, checkbox.checked);
+        updateTotals();
+      });
+    });
+
+    // Event tombol hapus produk
+    const deleteButtons = document.querySelectorAll(".btn-delete");
+   deleteButtons.forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const productCard = btn.closest(".product-card");
+    const productId = productCard.getAttribute("data-product-id");
+
+    if (!productId) return alert("Produk tidak ditemukan.");
+
+    if (!confirm("Yakin ingin menghapus produk ini dari keranjang?")) return;
+
+    try {
+      const response = await fetch("/keranjang/delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ product_id: productId }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        productCard.remove();
+        updateTotals();
+
+        // Cek apakah masih ada produk tersisa
+        const remainingProducts = document.querySelectorAll(".product-card");
+        if (remainingProducts.length === 0) {
+          const form = document.getElementById("orderForm");
+          form.innerHTML = '<p>Keranjang anda kosong.</p>';
+        }
+      } else {
+        alert("Gagal menghapus produk: " + (data.message || ""));
+      }
+    } catch (error) {
+      console.error("Error hapus produk:", error);
+      alert("Terjadi kesalahan saat menghapus produk.");
+    }
+  });
+});
+    // Hitung total awal
+    updateTotals();
+  });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
